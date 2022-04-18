@@ -2,9 +2,7 @@
   <div>
     <el-row>
       <el-col>
-        <div>
-          <Search></Search>
-        </div>
+        <Search @SearchCode="search_code" :smsg="msg"></Search>
       </el-col>
     </el-row>
 
@@ -31,8 +29,13 @@ export default {
   },
   data() {
     return {
-      input: "",
+      msg:"hello vue"
     };
+  },
+  methods: {
+    search_code(data) {
+      console.log(data);
+    },
   },
 };
 </script>

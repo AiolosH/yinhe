@@ -5,7 +5,15 @@
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
-      <el-submenu index="1">
+      <el-submenu v-for="item of menus" :key="item.index" :index="item.index">
+        <template slot="title">
+          <span class="el-top-title">{{item.title}}</span>
+        </template>
+        <el-menu-item-group v-for="child of item.child" :key="child.index">
+          <el-menu-item :index="child.index">{{child.title}}</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
+      <!-- <el-submenu index="1">
         <template slot="title">
           <span class="el-top-title">沪深A股</span>
         </template>
@@ -52,7 +60,7 @@
         <el-menu-item-group>
           <el-menu-item index="6-1">基础信息</el-menu-item>
         </el-menu-item-group>
-      </el-submenu>
+      </el-submenu> -->
     </el-menu>
   </el-col>
 </el-row>
@@ -60,6 +68,18 @@
 
 <script>
   export default {
+    data() {
+      return {
+        menus: [{
+          title: '港股通',
+          index: '1',
+          child: [{
+            title: '基础信息',
+            index: '1-1'
+          }]
+        }]
+      }
+    },
     methods: {
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
