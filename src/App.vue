@@ -6,7 +6,10 @@
       <router-link to="gaolin">高瓴资本</router-link>&nbsp;&nbsp;
       <router-link to="gaoyi">高毅资本</router-link>&nbsp;&nbsp;
       <router-link to="SXX">四象限</router-link>&nbsp;&nbsp;
-      <router-link to="tableDemo">表格</router-link>&nbsp;&nbsp;
+      <router-link to="TableUI">表格</router-link>&nbsp;&nbsp;
+      <router-link to="Navigation">导航</router-link>&nbsp;&nbsp;
+      <router-link to="Search">查找</router-link>&nbsp;&nbsp;
+      <router-link to="Main">银河</router-link>&nbsp;&nbsp;
     </div>
     <router-view />
   </div>

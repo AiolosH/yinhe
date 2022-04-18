@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import demo from '@/components/tableDemo'
+import demo from '@/components/TableUI'
 export default {
-  name: 'tableDemo',
+  name: 'TableUI',
   components: {demo},
   computed: {},
   mounted() {},

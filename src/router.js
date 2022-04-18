@@ -5,7 +5,10 @@ import Dapan from './views/Dapan.vue';
 import Gaolin from './views/Gaolin.vue';
 import Gaoyi from './views/Gaoyi.vue';
 import SXX from './views/SXX.vue';
-import tableDemo from './views/tableDemo.vue';
+import TableUI from './views/TableUI.vue';
+import Navigation from './views/Navigation.vue';
+import Search from './views/Search.vue';
+import Main from './views/Main.vue';
 
 Vue.use(Router);
 
@@ -44,9 +47,24 @@ export default new Router({
       component: SXX
     },
     {
-      path: '/tableDemo',
-      name: 'tableDemo',
-      component: tableDemo
+      path: '/TableUI',
+      name: 'TableUI',
+      component: TableUI
+    },
+    {
+      path: '/Navigation',
+      name: 'Navigation',
+      component: Navigation
+    },
+    {
+      path: '/Search',
+      name: 'Search',
+      component: Search
+    },
+    {
+      path: '/Main',
+      name: 'Main',
+      component: Main
     }
   ]
 });
