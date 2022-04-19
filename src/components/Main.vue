@@ -10,14 +10,15 @@
         <Search :smsg="msg"></Search>
       </el-col>
     </el-row>
-
     <el-row>
-      <el-col :span="3">
-        <Navigation></Navigation>
-      </el-col>
-      <el-col :span="21">
-        <TableUI></TableUI>
-      </el-col>
+      <el-container>
+        <el-aside class="Navi" width="240px">
+          <Navigation></Navigation>
+        </el-aside>
+        <el-main>
+          <TableUI></TableUI>
+        </el-main>
+      </el-container>  
     </el-row>
   </div>
 </template>
@@ -40,19 +41,14 @@ export default {
     };
   },
   mounted() {
-    window.open("http://20.205.119.14/#/index")
+    // 打包需要打开，本地调试不需要
+    // window.open("http://20.205.119.14/#/index")
   },
   created() {
-    this.$eventBus.$on("SearchCode", (data) => {
-      console.log("from search vue。", data);
-      this.SearchCode();
-    });
+    
   },
   methods: {
-    SearchCode(data) {
-      console.log("mainview search_code");
-      console.log(data);
-    },
+    
   },
 };
 </script>

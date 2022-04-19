@@ -9,7 +9,7 @@
       ></el-input>
     </el-col>
     <el-col :span="2">
-      <el-button class="search-button" size="small" @click="changeMessage">查找</el-button>
+      <el-button class="search-button" size="small" @click="SearchCode">查找</el-button>
     </el-col>
   </el-row>
 </template>
@@ -18,8 +18,7 @@
 export default {
   data() {
     return {
-      input:'',
-      msg:"123312",
+      input:''
     };
   },
   props: {
@@ -38,12 +37,8 @@ export default {
     }
   },
   methods: {
-    changeMessage(val) {
-      console.log("button is clicked1111");
-      console.log(this.input)
-      let data = {
-        msg:val,
-      };
+    SearchCode() {
+      console.log("button is clicked, input", this.input);
       this.$eventBus.$emit("SearchCode", this.input);
     },
   },

@@ -4,13 +4,14 @@
     <el-menu default-active="1"
       class="el-menu-vertical-demo"
       @open="handleOpen"
-      @close="handleClose">
+      @close="handleClose"
+      @select="handleSelect">
       <el-submenu v-for="item of menus" :key="item.index" :index="item.index">
         <template slot="title">
           <span class="el-top-title">{{item.title}}</span>
         </template>
-        <el-menu-item-group v-for="child of item.child" :key="child.index">
-          <el-menu-item :index="child.index">{{child.title}}</el-menu-item>
+        <el-menu-item-group v-for="child of item.child" :key="child.index" :span="24">
+          <el-menu-item :index="child.index" >{{child.title}}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
@@ -46,10 +47,13 @@
     },
     methods: {
       handleOpen(key, keyPath) {
-        console.log(key, keyPath);
+        console.log(key, keyPath)
       },
       handleClose(key, keyPath) {
-        console.log(key, keyPath);
+        console.log(key, keyPath)
+      },
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath)
       },
       handleNavigateList : function (data) {
         //data = [{title: '沪深A股',index: '1',child: [{title: '基础信息',index: '1-1'}]},{title: '债券',index: '2',child: [{title: '基础信息',index: '2-1'}]},{title: '基金',index: '3',child: [{title: '基础信息',index: '3-1'}]},{title: '指数',index: '4',child: [{title: '基础信息',index: '4-1'}]},{title: '期权',index: '5',child: [{title: '基础信息',index: '5-1'}]},{title: '港股通',index: '6',child: [{title: '基础信息',index: '6-1'}]}]
