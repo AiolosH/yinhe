@@ -13,54 +13,6 @@
           <el-menu-item :index="child.index">{{child.title}}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
-      <!-- <el-submenu index="1">
-        <template slot="title">
-          <span class="el-top-title">沪深A股</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item index="1-1">基础信息</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
-      <el-submenu index="2">
-        <template slot="title">
-          <span class="el-top-title">债券</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item index="2-1">基础信息</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
-      <el-submenu index="3">
-        <template slot="title">
-          <span class="el-top-title">基金</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item index="3-1">基础信息</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
-      <el-submenu index="4">
-        <template slot="title">
-          <span class="el-top-title">指数</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item index="4-1">基础信息</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
-      <el-submenu index="5">
-        <template slot="title">
-          <span class="el-top-title">期权</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item index="5-1">基础信息</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
-      <el-submenu index="6">
-        <template slot="title">
-          <span class="el-top-title">港股通</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item index="6-1">基础信息</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu> -->
     </el-menu>
   </el-col>
 </el-row>
@@ -70,15 +22,61 @@
   export default {
     data() {
       return {
+        // todo 后续menu从client来就行了
         menus: [{
-          title: '港股通',
+          title: '沪深A股',
           index: '1',
           child: [{
             title: '基础信息',
             index: '1-1'
           }]
-        }]
+        },
+        {
+          title: '债券',
+          index: '2',
+          child: [{
+            title: '基础信息',
+            index: '2-1'
+          }]
+        },
+        {
+          title: '基金',
+          index: '3',
+          child: [{
+            title: '基础信息',
+            index: '3-1'
+          }]
+        },
+        {
+          title: '指数',
+          index: '4',
+          child: [{
+            title: '基础信息',
+            index: '4-1'
+          }]
+        },
+        {
+          title: '期权',
+          index: '5',
+          child: [{
+            title: '基础信息',
+            index: '5-1'
+          }]
+        },
+        {
+          title: '港股通',
+          index: '6',
+          child: [{
+            title: '基础信息',
+            index: '6-1'
+          }]
+        }
+        ]
       }
+    },
+    mounted() {
+      // todo get menus
+      // menus = 
     },
     methods: {
       handleOpen(key, keyPath) {

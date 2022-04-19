@@ -2,7 +2,7 @@
   <div>
     <el-row>
       <el-col>
-        <Search @SearchCode="search_code" :smsg="msg"></Search>
+        <Search :smsg="msg"></Search>
       </el-col>
     </el-row>
 
@@ -32,9 +32,17 @@ export default {
       msg:"hello vue"
     };
   },
+  created() {
+    this.$eventBus.$on("SearchCode", (data) => {
+      console.log("from search vue。", data)
+      this.SearchCode()
+    });
+  },
   methods: {
-    search_code(data) {
+    SearchCode(data) {
+      console.log("mainview search_code")
       console.log(data);
+      alert(data)
     },
   },
 };

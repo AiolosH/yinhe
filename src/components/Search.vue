@@ -14,10 +14,10 @@
   </el-row>
 </template>
 <script>
+
 export default {
   data() {
     return {
-
       input:'',
       msg:"123312",
     };
@@ -29,7 +29,8 @@ export default {
     }
   },
   mounted() {
-    
+    console.log("初始化完成")
+    window.open("http://localhost:8081/#/Home");
   },
   watch: {
     '$route': {
@@ -46,7 +47,7 @@ export default {
       let data = {
         msg:val,
       };
-      this.$eventbus.emit("SearchCode", this.input);
+      this.$eventBus.$emit("SearchCode", this.input);
     },
   },
 };

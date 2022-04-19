@@ -1,13 +1,13 @@
 <template>
   <el-container>
-  <!-- <el-header style="text-align: right; font-size: 12px">
-  </el-header> -->
-  <el-table :data="tableData" border style="width: 100%">
-    <el-table-column prop="code" label="代码" width="180"> </el-table-column>
-    <el-table-column prop="name" label="名称" width="180"> </el-table-column>
-    <el-table-column prop="market" label="市场" width="180"> </el-table-column>
-    <el-table-column prop="industry" label="行业"> </el-table-column>
-  </el-table>
+    <!-- <el-header style="text-align: right; font-size: 12px">
+    </el-header> -->
+    <el-table :data="tableData" border style="width: 100%">
+      <el-table-column prop="code" label="代码" width="180"> </el-table-column>
+      <el-table-column prop="name" label="名称" width="180"> </el-table-column>
+      <el-table-column prop="market" label="市场" width="180"> </el-table-column>
+      <el-table-column prop="industry" label="行业"> </el-table-column>
+    </el-table>
   </el-container>
 </template>
 
@@ -20,6 +20,7 @@ export default {
     };
   },
   mounted() {
+    // todo 初始化默认数据
     this.handleUserList();
   },
   methods: {
@@ -33,6 +34,8 @@ export default {
     },
     handleUserList(page = 1) {
       console.log(page);
+
+      // todo 从client获取数据
       // Axios.get("http://localhost:8080/TestSelectStockBaseData", {
       //   params: {
       //     limit: 20,
