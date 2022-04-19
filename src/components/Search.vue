@@ -28,10 +28,7 @@ export default {
       default: ''
     }
   },
-  mounted() {
-    console.log("初始化完成")
-    window.open("http://localhost:8081/#/Home");
-  },
+  mounted() {},
   watch: {
     '$route': {
       handler() {

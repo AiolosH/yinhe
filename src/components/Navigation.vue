@@ -23,60 +23,26 @@
     data() {
       return {
         // todo 后续menu从client来就行了
-        menus: [{
-          title: '沪深A股',
-          index: '1',
-          child: [{
-            title: '基础信息',
-            index: '1-1'
-          }]
-        },
-        {
-          title: '债券',
-          index: '2',
-          child: [{
-            title: '基础信息',
-            index: '2-1'
-          }]
-        },
-        {
-          title: '基金',
-          index: '3',
-          child: [{
-            title: '基础信息',
-            index: '3-1'
-          }]
-        },
-        {
-          title: '指数',
-          index: '4',
-          child: [{
-            title: '基础信息',
-            index: '4-1'
-          }]
-        },
-        {
-          title: '期权',
-          index: '5',
-          child: [{
-            title: '基础信息',
-            index: '5-1'
-          }]
-        },
-        {
-          title: '港股通',
-          index: '6',
-          child: [{
-            title: '基础信息',
-            index: '6-1'
-          }]
-        }
-        ]
+        menus:[{title: '沪深A股',index: '1',child: [{title: '基础信息',index: '1-1'}]}]
+        //menus: [{title: '沪深A股',index: '1',child: [{title: '基础信息',index: '1-1'}]},{title: '债券',index: '2',child: [{title: '基础信息',index: '2-1'}]},{title: '基金',index: '3',child: [{title: '基础信息',index: '3-1'}]},{title: '指数',index: '4',child: [{title: '基础信息',index: '4-1'}]},{title: '期权',index: '5',child: [{title: '基础信息',index: '5-1'}]},{title: '港股通',index: '6',child: [{title: '基础信息',index: '6-1'}]}]
       }
     },
     mounted() {
       // todo get menus
       // menus = 
+    },
+    created() {
+      // 注册更新事件
+      this.$eventBus.$on("UpdateNavigate", (data) => {
+        console.log("Navigation Get Data From eventbus，and run UpdateNavigate function")
+        this.handleNavigateList(data)
+      })
+
+      // 注册情况表格事件
+      this.$eventBus.$on("ClearNavigate", () => {
+        console.log("Navigation Get Data From eventbus，and run ClearNavigate function")
+        this.handleClearNavigateList()
+      })
     },
     methods: {
       handleOpen(key, keyPath) {
@@ -84,6 +50,13 @@
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
+      },
+      handleNavigateList : function (data) {
+        //data = [{title: '沪深A股',index: '1',child: [{title: '基础信息',index: '1-1'}]},{title: '债券',index: '2',child: [{title: '基础信息',index: '2-1'}]},{title: '基金',index: '3',child: [{title: '基础信息',index: '3-1'}]},{title: '指数',index: '4',child: [{title: '基础信息',index: '4-1'}]},{title: '期权',index: '5',child: [{title: '基础信息',index: '5-1'}]},{title: '港股通',index: '6',child: [{title: '基础信息',index: '6-1'}]}]
+        this.menus = data;
+      },
+      handleClearNavigateList : function (data) {
+        this.menus = data;
       }
     }
   }

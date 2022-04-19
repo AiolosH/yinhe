@@ -10,6 +10,9 @@ import Navigation from './views/Navigation.vue';
 import Search from './views/Search.vue';
 import Main from './views/Main.vue';
 
+// 测试工具
+// import Tool from './views/Tool.vue';
+
 Vue.use(Router);
 
 export default new Router({
