@@ -11,7 +11,7 @@
           <span class="el-top-title">{{item.title}}</span>
         </template>
         <el-menu-item-group v-for="child of item.child" :key="child.index" :span="24">
-          <el-menu-item :index="child.index" >{{child.title}}</el-menu-item>
+          <el-menu-item class="navi-sub-item" :index="child.index">{{child.title}}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
@@ -69,11 +69,19 @@
 <style>
 .el-top-title {
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
-
 }
 
-el-menu-item{
-  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
-  font-size:8px
+.el-submenu__title{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+/* .el-top-title {
+  padding-left:10px !important;
+} */
+
+.navi-sub-item{
+  /* font-size:10px; */
+  padding-left:10px !important;
+  padding-right: 10px;
 }
 </style>

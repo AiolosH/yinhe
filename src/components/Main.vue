@@ -1,25 +1,15 @@
 <template>
   <div>
-    <el-row>
-      <el-col>
-        <Tool> </Tool>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col>
-        <Search :smsg="msg"></Search>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-container>
-        <el-aside class="Navi" width="240px">
-          <Navigation></Navigation>
-        </el-aside>
-        <el-main>
-          <TableUI></TableUI>
-        </el-main>
-      </el-container>  
-    </el-row>
+    <Tool> </Tool>
+    <Search :smsg="msg"></Search>
+    <el-container style="min-height:800px;">
+      <el-aside class="Navi" min-width="180px" width="180px" >
+        <Navigation></Navigation>
+      </el-aside>
+      <el-main>
+        <TableUI></TableUI>
+      </el-main>
+    </el-container>
   </div>
 </template>
 <script>
@@ -44,12 +34,8 @@ export default {
     // 打包需要打开，本地调试不需要
     // window.open("http://20.205.119.14/#/index")
   },
-  created() {
-    
-  },
-  methods: {
-    
-  },
+  created() {},
+  methods: {},
 };
 </script>
 
